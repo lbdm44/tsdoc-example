@@ -1,0 +1,34 @@
+{
+  "name": "tsdoc-example",
+  "version": "0.0.1",
+  "description": "Working through examples using ts-doc",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "npm run clean && tsc",
+    "clean": "rm -rf ./lib",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lbdm44/tsdoc-example.git"
+  },
+  "author": "lbdm44",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lbdm44/tsdoc-example/issues"
+  },
+  "homepage": "https://github.com/lbdm44/tsdoc-example#readme",
+  "volta": {
+    "node": "16.13.2"
+  },
+  "devDependencies": {
+    "husky": "^7.0.4",
+    "lint-staged": "^12.2.0",
+    "prettier": "2.5.1",
+    "typescript": "^4.5.4"
+  },
+  "lint-staged": {
+    "**/*.{js,ts}": "prettier --write"
+  }
+}
