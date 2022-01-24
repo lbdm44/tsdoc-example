@@ -1,3 +1,7 @@
+export function formatVehicle(type: string, wheels: number) {
+  return `I'm a ${type} and have ${wheels} wheels`;
+}
+
 abstract class Vehicle {
   /**
    * Indicates what type of vehicle this is.
@@ -14,7 +18,7 @@ abstract class Vehicle {
    * @returns A human readable description of this vehicle.
    */
   toString() {
-    return `I'm a ${this.type} and have ${this.wheels} wheels`;
+    return formatVehicle(this.type, this.wheels);
   }
 }
 

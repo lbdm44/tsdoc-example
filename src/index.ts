@@ -1,12 +1,5 @@
-import Car from './car';
-import Motorcycle from './motorcycle';
+import * as Vehicle from './vehicle';
+import * as Car from './car';
+import * as Motorcycle from './motorcycle';
 
-function main(): void {
-  let c = new Car();
-  let m = new Motorcycle();
-
-  console.log(`${c}`);
-  console.log(`${m}`);
-}
-
-main();
+export { Car, Motorcycle, Vehicle };
