@@ -4,12 +4,13 @@
   "description": "Working through examples using ts-doc",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
+  "type": "module",
   "scripts": {
     "api-extractor": "api-extractor",
     "api-documenter": "api-documenter",
     "build": "scripty",
     "docs:prepare": "scripty",
-    "docs:build": "scripty",
+    "docs:build": "node ./scripts/docs/build.js",
     "docs:full": "npm run clean && npm run build && npm run docs:prepare && npm run docs:build",
     "clean": "rm -rf ./dist ./etc ./lib ./markdown ./temp",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -31,11 +32,21 @@
   "devDependencies": {
     "@microsoft/api-documenter": "^7.15.0",
     "@microsoft/api-extractor": "^7.19.4",
+    "chalk": "^5.0.0",
+    "debug": "^4.3.3",
+    "enquirer": "^2.3.6",
+    "execa": "^6.0.0",
+    "fast-glob": "^3.2.11",
     "husky": "^7.0.4",
     "lint-staged": "^12.2.0",
+    "micromatch": "^4.0.4",
+    "ora": "^6.0.1",
     "prettier": "2.5.1",
     "scripty": "^2.0.0",
-    "typescript": "^4.5.4"
+    "typescript": "^4.5.4",
+    "walk-sync": "^3.0.0",
+    "workerpool": "^6.2.0",
+    "yargs": "^17.3.1"
   },
   "lint-staged": {
     "**/*.{js,ts}": "prettier --write"
