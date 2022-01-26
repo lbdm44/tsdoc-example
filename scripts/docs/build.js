@@ -58,12 +58,19 @@ async function main(debug) {
   debug('build:start');
 
   const tempBuildDir = 'tmp';
-  // const packages = ['/src/packages/movies', '/src/packages/vehicles'];
+  const packages = ['./src/packages/movies', './src/packages/vehicles'];
+  const tempPkgDirs = packages.map((dir) => `${dir}/tmp`);
+
+  // TODO: use these tmp dirs as places for generated entrypoints, but dump their decls to a centralized location
+  debug(tempPkgDirs);
 
   // './dist', './etc', './markdown', './temp',
-  cleanDirs([tempBuildDir], debug.extend('cleanDirectories'));
+  cleanDirs([tempBuildDir, ...tempPkgDirs], debug.extend('cleanDirectories'));
 
-  createDirectories([tempBuildDir], debug.extend('createDirectories'));
+  createDirectories(
+    [tempBuildDir, ...tempPkgDirs],
+    debug.extend('createDirectories')
+  );
 
   generateEntryPoint(debug.extend('generateEntryPoint'));
 
